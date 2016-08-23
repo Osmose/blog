@@ -1,0 +1,93 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    margin: 0;
+}
+
+a {
+    color: #3498DB;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2980B9;
+}
+
+code {
+    background: #ECF0F1;
+    padding: 1px;
+}
+
+footer, div.page {
+    max-width: 50em;
+    margin: 0 auto;
+    padding: 1em;
+
+}
+
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('zzt.png');
+    background-size: cover;
+    color: #ECF0F1;
+    text-align: center;
+    padding: 5vw 2em;
+}
+
+header h1 {
+    margin: 0 0 .5em;
+    font-weight: 500;
+    font-size: 42px;
+}
+
+header .avatar {
+    background: #ECF0F1 url('avatar.png');
+    background-size: cover;
+    background-position: center center;
+    height: 128px;
+    width: 128px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+header nav {
+    margin: 0 auto;
+    background: #ECF0F1;
+    display: inline-block;
+    padding: .5em 1em;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    padding: .5em;
+    margin: 0;
+    flex: 1;
+}
+
+div.page {
+}
+
+div.highlight {
+    background: #ECF0F1;
+    border-left: 2px solid #E74C3C;
+    border-bottom: 1px solid #dbe3e4;
+    padding: 1em;
+    overflow: auto;
+}
+
+.highlight pre {
+    margin: 0;
+}
