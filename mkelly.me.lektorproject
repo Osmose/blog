@@ -5,3 +5,6 @@ url = http://www.mkelly.me
 [packages]
 lektor-markdown-highlighter = 0.1
 lektor-atom = 0.2
+
+[servers.production]
+target = ghpages://Osmose/Osmose.github.io?cname=www.mkelly.me
