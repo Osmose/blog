@@ -1,6 +1,6 @@
 title: Caching Async Operations via Promises
 ---
-pub_date: 2016-08-22
+pub_date: 2016-08-22 09:00:00 -0700
 ---
 author: Michael Kelly
 ---
@@ -8,7 +8,7 @@ body:
 
 I was working on [a bug in Normandy][bug] the other day and remembered a fun little trick for caching asynchronous operations in JavaScript.
 
-The bug in question involved two asynchronous actions happening within a function. First, we made an AJAX request to the server to get an "Action" object. Next, we took an attribute of the action, the `implementation_url`, and injected a `<script>` tag into the page with the `src` attribute set to the URL. The JavaScript being injected would then call a global function and pass it a class function, which was the value we wanted to return. 
+The bug in question involved two asynchronous actions happening within a function. First, we made an AJAX request to the server to get an "Action" object. Next, we took an attribute of the action, the `implementation_url`, and injected a `<script>` tag into the page with the `src` attribute set to the URL. The JavaScript being injected would then call a global function and pass it a class function, which was the value we wanted to return.
 
 The bug was that if we called the function multiple times with the same action, the function would make multiple requests to the same URL, even though we really only needed to download data for each Action once. The solution was to cache the responses, but instead of caching the responses directly, I found it was cleaner to cache the [Promise][] returned when making the request instead:
 

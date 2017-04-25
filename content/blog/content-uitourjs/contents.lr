@@ -310,7 +310,7 @@ Describing [`cloneInto`][cloneInto] could take up an entire post on its own. In 
 It takes effort, but I've found that deep-dives like this are a great way to both understand a single piece of code, and to learn from the style of the code's author(s). Hopefully ya'll will find this useful as well!
 
 ---
-pub_date: 2017-4-25
+pub_date: 2017-4-25 08:57:00 -0700
 ---
 twitter_handle: Osmose
 ---
