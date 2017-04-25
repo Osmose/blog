@@ -26,7 +26,7 @@ var UITourListener = {
 addEventListener("mozUITour", UITourListener, false, true);
 ```
 
-Webpages that want to use UITour emit [synthetic events][] with the name `"mozUITour"`. In the snippet above, `UITourListener` is the object that receives these events. Normally, event listeners are simply functions, but they can also be [EventListeners][], which are simply objects with a `handleEvent` function.
+Webpages that want to use UITour emit [synthetic events][] with the name `"mozUITour"`. In the snippet above, `UITourListener` is the object that receives these events. Normally, event listeners are functions, but they can also be [EventListeners][], which are simply objects with a `handleEvent` function.
 
 According to [Mossop's comment][gh-comment], `content-UITour.js` is [loaded in `browser.js`][browserjs]. A search for `firefox loadFrameScript` brings up two useful pages:
 
@@ -171,7 +171,7 @@ The next check is against the permissions system. The [`Services.jsm`][services]
 
 This is where DXR really shines. If we look at [nsIPermissionManager.idl][] and click the name of the interface, a dropdown appears with several options. The "Find subclasses" option performs a search for `"derived:nsIPermissionManager"`, which leads to the [header file for nsPermissionManager][nsPermissionManager.h].
 
-We're looking for where the default permission values come from, so an in-page search for the word `"default"` eventually lands on a function named `ImportDefaults`. Clicking that name and selecting "Jump to definition" lands us inside [nsPermissionManager.cpp][], the very first line of which is:
+We're looking for where the default permission values come from, so an in-page search for the word `"default"` eventually lands on a function named `ImportDefaults`. Clicking that name and selecting "Jump to definition" lands us inside [nsPermissionManager.cpp][], and the very first line of the function is:
 
 ```cpp
 nsCString defaultsURL = mozilla::Preferences::GetCString(kDefaultsUrlPrefName);
