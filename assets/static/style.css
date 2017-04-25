@@ -7,7 +7,7 @@
 body {
     color: #333;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
     margin: 0;
 }
 
@@ -20,13 +20,17 @@ a:hover {
     color: #2980B9;
 }
 
+p, .highlight {
+    margin: 1.3em 0;
+}
+
 code {
     background: #ECF0F1;
-    padding: 1px;
+    padding: 2px 3px;
 }
 
 footer, div.page {
-    max-width: 50em;
+    max-width: 44em;
     margin: 0 auto;
     padding: 1em;
 
@@ -90,4 +94,17 @@ div.highlight {
 
 .highlight pre {
     margin: 0;
+}
+
+h1, h2 {
+    margin: 1em 0;
+}
+
+hr {
+    border: 1px solid #dbe3e4;
+    margin: 2.5em 0;
+}
+
+ul {
+    list-style-type: square;
 }
