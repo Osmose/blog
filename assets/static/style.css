@@ -108,3 +108,7 @@ hr {
 ul {
     list-style-type: square;
 }
+
+.page img {
+    max-width: 100%;
+}
