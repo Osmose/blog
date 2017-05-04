@@ -1,4 +1,5 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+@import url('https://code.cdn.mozilla.net/fonts/fira.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css');
 
 * {
     box-sizing: border-box;
@@ -6,7 +7,7 @@
 
 body {
     color: #333;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Fira Sans", "Helvetica", "Arial", sans-serif;
     line-height: 1.6;
     margin: 0;
 }
@@ -27,6 +28,8 @@ p, .highlight {
 code {
     background: #ECF0F1;
     padding: 2px 3px;
+    font-family: "Fira Mono", monospace;
+    font-size: .9em;
 }
 
 footer, div.page {
@@ -94,6 +97,8 @@ div.highlight {
 
 .highlight pre {
     margin: 0;
+    font-family: "Fira Mono", monospace;
+    font-size: .8em;
 }
 
 h1, h2 {
@@ -111,4 +116,17 @@ ul {
 
 .page img {
     max-width: 100%;
+}
+
+.blog-post {
+    margin-bottom: 6em;
+}
+
+.blog-title {
+    font-size: 30px;
+    margin: .5em 0 .2em;
+}
+
+.meta > span {
+    margin-right: 1em;
 }
