@@ -130,3 +130,12 @@ ul {
 .meta > span {
     margin-right: 1em;
 }
+
+figure {
+    text-align: center;
+    margin: 1.3em 0;
+}
+
+figcaption {
+    font-size: .8em;
+}
