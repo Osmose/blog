@@ -143,3 +143,10 @@ figcaption {
 dd {
     margin-bottom: 1.3em;
 }
+
+.glitch-embed-wrap {
+    height: 600px;
+    width: 1000px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
