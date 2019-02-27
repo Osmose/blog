@@ -4,8 +4,6 @@ pub_date: 2019-02-23 01:10:00 -0700
 ---
 tags: mozilla phaser gamedev
 ---
-_discoverable: false
----
 body:
 
 I've been working on a game using [Phaser][] in my spare time:
