@@ -47,7 +47,7 @@ if (set.source)
 
 At this point, we're past the `preload` step of the scene, and the API for creating tilemaps isn't asynchronous, so going back and loading another external JSON file isn't really an option at this point.
 
-IMO a "proper" fix would be similar to how the images for tilemaps are handled. Even with internal tilesets, the images used in the tilesets must be loaded separately and passed when creating a tileset:
+In my opinion, a "proper" fix would be similar to how the images for tilemaps are handled. Even with internal tilesets, the images used in the tilesets must be loaded separately and passed when creating a tileset:
 
 ```js
 const scene = {
