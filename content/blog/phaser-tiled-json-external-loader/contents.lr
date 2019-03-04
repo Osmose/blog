@@ -4,8 +4,6 @@ pub_date: 2019-03-03 01:10:00 -0700
 ---
 tags: phaser gamedev
 ---
-_discoverable: no
----
 body:
 
 [Tiled][] is a popular tilemap editor, and [Phaser][] has great built-in support for it. One feature of Tiled that Phaser _doesn't_ support is external tilesets.
