@@ -1,0 +1,318 @@
+@font-face {
+  font-family: "Final Fantasy 3";
+  src: url("ff3.woff2")
+      format("woff2"),
+    url("ff3.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --bar-color: #ed97c2;
+  --bar-bg: #666;
+  --window-bg-color: #002a88;
+  --text-color: #fff;
+  --bg-color: #000;
+
+  --normal-font: "Benton Sans", Helvetica, Sans-serif;
+  --pixel-font: "Final Fantasy 3", helvetica, arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--normal-font);
+  font-size: 16px;
+}
+
+a {
+  color: var(--text-color);
+}
+
+.pixel-font {
+  font-family: var(--pixel-font);
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+#songInfo {
+  display: none;
+}
+
+.square-box {
+  border: 9px solid transparent;
+  border-image-source: url("square-border.png");
+  border-image-slice: 9;
+  border-image-width: 9px;
+}
+
+.square-box > .interior {
+  background: var(--window-bg-color);
+}
+
+.round-box {
+  border: 12px solid transparent;
+  border-image-source: url("border.png");
+  border-image-slice: 12;
+  border-image-width: 12px;
+}
+
+.round-box > .interior {
+  background: var(--window-bg-color);
+  height: 100%;
+  padding: 3px;
+  overflow: hidden;
+}
+
+.page-container {
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+.page-container > *,
+.player-container > * {
+  margin-bottom: 10px;
+}
+
+.song-list-item {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.song-list-cover-art-box {
+  margin-right: 10px;
+}
+
+.song-list-cover-art {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  display: block;
+}
+
+.song-list-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.song-list-title-box {
+  flex: 1;
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+.song-list-tag-box {
+  flex: 0;
+}
+
+.cover-art-box {
+  overflow: hidden;
+}
+
+.cover-art {
+  object-fit: cover;
+  width: 100%;
+  height: 682px;
+  display: block;
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.controls-container .play-pause-box {
+  flex: 0;
+  margin-right: 10px;
+}
+
+.controls-container .position-box {
+  flex: 1;
+  font-size: 24px;
+}
+
+.amplitude-play-pause {
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.amplitude-play-pause.amplitude-paused {
+  background-image: url("play.png");
+}
+
+.amplitude-play-pause.amplitude-playing {
+  background-image: url("pause.png");
+}
+
+.progress-box progress {
+  width: 100%;
+  background: var(--bar-bg);
+  color: var(--bar-color);
+  border-radius: 0;
+  display: block;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 27px;
+}
+
+.progress-box progress::-moz-progress-bar {
+  background-color: var(--bar-color);
+}
+
+.progress-box progress::-webkit-progress-value {
+  background-color: var(--bar-color);
+}
+
+.time-container {
+  display: flex;
+  margin-top: 6px;
+}
+
+.time-container > * {
+  flex: 1;
+  line-height: 1;
+}
+
+.time-container .duration {
+  text-align: right;
+}
+
+.extra-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.extra-container > * {
+  flex: 1;
+}
+
+.extra-container .download {
+  display: block;
+  flex: 0;
+  margin-left: 10px;
+  line-height: 24px;
+  font-size: 20px;
+}
+
+.description-box {
+  font-family: var(--normal-font);
+}
+
+.description-box > .interior {
+  padding: 6px;
+}
+
+.description-box > .interior > :last-child {
+  margin-bottom: 0;
+}
+
+.description-box h1 {
+  font-family: var(--pixel-font);
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0 0 10px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.footer > * {
+  margin-left: 10px;
+}
+
+.footer-note {
+  line-height: 32px;
+}
+
+.footer .twitter-button {
+  display: block;
+}
+
+.footer .twitter-button img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+@media (max-width: 400px) {
+  .cover-art {
+    height: 190px;
+  }
+
+  .progress-box progress {
+    height: 18px;
+  }
+
+  .amplitude-play-pause {
+    width: 60px;
+    height: 60px;
+    background-size: 26px 26px;
+  }
+
+  .controls-container .position-box {
+    font-size: 15px;
+  }
+}
+
+.small-player .cover-art {
+  height: 190px;
+}
+
+.small-player .progress-box progress {
+  height: 18px;
+}
+
+.small-player .amplitude-play-pause {
+  width: 60px;
+  height: 60px;
+  background-size: 26px 26px;
+}
+
+.small-player .controls-container .position-box {
+  font-size: 15px;
+}
+
+.tag {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 24px;
+  padding-left: 30px;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  font-family: var(--pixel-font);
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  font-size: 20px;
+}
+
+.tag-8-bit {
+  background-image: url("green-materia.png");
+}
+
+.tag-2A03 {
+  background-image: url("blue-materia.png");
+}
+
+.tag-VRC6 {
+  background-image: url("red-materia.png");
+}
+
+.tag-MMC5 {
+  background-image: url("yellow-materia.png");
+}

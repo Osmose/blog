@@ -28,6 +28,8 @@
         </li>
         <li {% if this.is_child_of('/blog') %} class="active"{% endif %}>
           <a href="{{ '/blog'|url }}">Blog</a>
+        <li {% if this.is_child_of('/music') %} class="active"{% endif %}>
+          <a href="{{ '/music'|url }}">Music</a>
         </li>
         <li><a href="https://twitter.com/osmose">@Osmose</a></li>
         <li><a href="https://github.com/osmose/">Github</a></li>
