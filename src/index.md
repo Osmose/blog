@@ -1,7 +1,6 @@
+---
 title: About
 ---
-body:
-
 I am a full-time web developer at [🎏 Glitch][]. I'm based in [Portland, OR][pdx].
 
 Previously I was at [Mozilla][] for 7 years. I worked on marketing webpages, improved tools supporting Firefox developers, built the infrastructure for Firefox's experiment pipeline, wrote add-ons, and more.
