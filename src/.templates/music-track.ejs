@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('music-head.ejs', { title: output.file.attributes.title }) %>
+
+    <meta property="og:title" content="<%- output.file.attributes.title %>">
+    <meta property="og:url" content="<%- ctx.absolutify(output.file.url) %>">
+    <meta property="og:type" content="music.song">
+    <meta property="og:description" content="<%- output.file.attributes.description %>">
+    <meta property="og:image" content="<%- ctx.absolutify(output.file.attributes.image) %>">
+  </head>
+  <body>
+    <div class="page-container">
+      <div id="songInfo" data-song-info="<%=
+        JSON.stringify({
+          'title': output.file.attributes.title,
+          'author': output.file.attributes.author,
+          'url': output.file.attributes.audio,
+          'cover_art_url': output.file.attributes.image,
+        })
+      %>"></div>
+
+      <div class="player-container">
+        <div class="square-box cover-art-box">
+          <div class="interior">
+            <img data-amplitude-song-info="cover_art_url" class="cover-art"/>
+          </div>
+        </div>
+
+        <div class="controls-container">
+          <div class="round-box play-pause-box">
+            <div class="interior">
+              <div class="amplitude-play-pause" id="play-pause"></div>
+            </div>
+          </div>
+          <div class="round-box position-box">
+            <div class="interior">
+              <div class="square-box progress-box">
+                <div class="interior">
+                  <progress class="amplitude-song-played-progress"></progress>
+                </div>
+              </div>
+
+              <div class="time-container pixel-font">
+                <span class="current-time">
+                  <span class="amplitude-current-minutes"></span>:<span class="amplitude-current-seconds"></span>
+                </span>
+                <span class="duration">
+                  <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="extra-container">
+          <div class="round-box">
+            <div class="interior">
+              <% for (const tag of output.file.attributes.tags) { %>
+                <span class="tag tag-<%- tag %>"><%- tag %></span>
+              <% } %>
+            </div>
+          </div>
+          <a class="round-box download pixel-font" href="<%- output.file.attributes.audio %>" download="<%- output.file.attributes.title %>.mp3">
+            <div class="interior">
+              Download
+            </div>
+          </a>
+        </div>
+
+        <div class="round-box description-box">
+          <div class="interior">
+            <%- output.content %>
+          </div>
+        </div>
+      </div>
+
+      <script src="/static/music/amplitude.js"></script>
+      <script src="/static/music/song.js"></script>
+
+      <%- include('music-footer.ejs') %>
+    </div>
+  </body>
+</html>

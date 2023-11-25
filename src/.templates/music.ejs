@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('music-head.ejs', { title: output.file.attributes.title }) %>
+  </head>
+  <body>
+    <div class="page-container">
+      <%- output.content %>
+      <%- include('music-footer.ejs') %>
+    </div>
+  </body>
+</html>

@@ -240,11 +240,11 @@ a {
   line-height: 32px;
 }
 
-.footer .twitter-button {
+.footer .cohost-button {
   display: block;
 }
 
-.footer .twitter-button img {
+.footer .cohost-button svg {
   width: 32px;
   height: 32px;
   display: block;

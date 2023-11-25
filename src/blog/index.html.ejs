@@ -1,0 +1,25 @@
+---
+title: Blog
+template: default
+---
+<% const paginator = ctx.paginate(ctx.getFiles('./*/index.md', {sort: {attribute: 'date', type: 'date', order: 'desc'}}), {itemsPerPage: 5}) %>
+
+<% for (const file of paginator.items) { %>
+  <div class="blog-post">
+    <%- include('../.templates/blog-header.ejs', { url: file.url, attributes: file.attributes }) %>
+    <%- ctx.renderMarkdown(file.body) %>
+  </div>
+<% } %>
+
+<p>Pages</p>
+<div>
+  <% for (const page of paginator.pages) { %>
+
+      <% if (paginator.currentPage === page.number) { %>
+        <span class="page-number selected"><%- page.number %></span>
+      <% } else { %>
+        <a class="page-number" href="<%- page.url %>"><%- page.number %></a>
+      <% } %>
+    </span>
+  <% } %>
+</div>

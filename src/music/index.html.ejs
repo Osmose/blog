@@ -1,0 +1,26 @@
+---
+template: music
+---
+<% for (const file of ctx.getFiles('./*/index.md', {sort: {attribute: 'date', type: 'date', order: 'desc'}})) { %>
+  <a href="<%- file.url %>" class="song-list-item">
+    <div class="square-box song-list-cover-art-box">
+      <div class="interior">
+        <img class="song-list-cover-art" src="<%- file.attributes.image %>">
+      </div>
+    </div>
+    <div class="song-list-info">
+      <div class="round-box pixel-font song-list-title-box">
+        <div class="interior">
+          <%- file.attributes.title %>
+        </div>
+      </div>
+      <div class="round-box song-list-tag-box">
+        <div class="interior">
+          <% for (const tag of file.attributes.tags) { %>
+            <span class="tag tag-<%- tag %>"><%- tag %></span>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </a>
+<% } %>

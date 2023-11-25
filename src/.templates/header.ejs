@@ -1,0 +1,18 @@
+<header>
+  <span class="avatar"></span>
+  <h1>Osmose</h1>
+  <nav>
+    <ul class="nav navbar-nav">
+      <li <% if (path === 'index.html') { %> class="active"<% } %>>
+        <a href="/">About</a>
+      </li>
+      <li <% if (path.startsWith('blog')) { %> class="active"<% } %>>
+        <a href="/blog">Blog</a>
+      <li <% if (path.startsWith('music')) { %> class="active"<% } %>>
+        <a href="/music">Music</a>
+      </li>
+      <li><a href="https://cohost.org/Osmose">Social</a></li>
+      <li><a href="https://github.com/osmose/">Github</a></li>
+    </ul>
+  </nav>
+</header>

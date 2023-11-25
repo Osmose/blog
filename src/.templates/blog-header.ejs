@@ -1,0 +1,11 @@
+<h2 class="blog-title"><a href="<%- url %>"><%- attributes.title -%></a></h2>
+<div class="meta">
+  <span>
+    <i class="octicon octicon-calendar"></i>
+    <%- ctx.formatDate(attributes.date, 'MMMM D, YYYY') %>
+  </span>
+  <span>
+    <i class="octicon octicon-tag"></i>
+    <%- attributes.tags?.join(' ') %>
+  </span>
+</div>

@@ -6,6 +6,7 @@
 <body>
   <%- include('header.ejs', { path: output.path }) %>
   <div class="page">
+    <%- include('../.templates/blog-header.ejs', { url: output.file.url, attributes: output.file.attributes }) %>
     <%- output.content %>
   </div>
   <%- include('footer.ejs') %>
